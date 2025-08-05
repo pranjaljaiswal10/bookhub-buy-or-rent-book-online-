@@ -2,7 +2,7 @@
 
 const Store = () => {
   return (
-    <div>
+    <div className="flex">
         
     </div>
   )

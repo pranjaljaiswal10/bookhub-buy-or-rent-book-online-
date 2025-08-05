@@ -4,7 +4,7 @@ import { User } from "../models/user.model.js"
 const registerUser = async (req, res, next) => {
     try {
         const { username, email, password, role } = req.body
-        if ([username, email, password,role].some((item) => item.trim() === "")) {
+        if ([username, email, password, role].some((item) => item.trim() === "")) {
             res.status(400).json({ error: "All field is required" })
         }
         const findUser = await User.findOne({ email })
@@ -42,7 +42,7 @@ const loginUser = async (req, res, next) => {
             secure: true
         }
         res.cookie('token', token)
-        res.status(200).json({ message: "User login successfully", success: true })
+        res.status(200).json({ data: user, message: "User login successfully", success: true })
     } catch (error) {
         console.log(error)
         next(error)

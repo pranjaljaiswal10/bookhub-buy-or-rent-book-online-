@@ -32,6 +32,7 @@ app.use(cookieParser())
 
 app.use("/api/v1/users",authRouter)
 app.use("/api/v1/books",bookRouter)
+app.use("/api/v1/payment",paymentRouter)
 
 app.use((req,res,error,next)=>{
   console.log(error.stack)
