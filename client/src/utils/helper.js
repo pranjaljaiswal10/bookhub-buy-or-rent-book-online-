@@ -1,7 +1,7 @@
 
 
 export const validateData = (userdetail) => {
-   const 
+   const {username,email,password}=userdetail
    const error = {}
    if (username.length < 3 || username.length < 15) {
       error["username"] = "username must be atleast three character"

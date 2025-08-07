@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema(
     },
     role:{
       type:String,
-      enum:["Seller","buyer"],
+      enum:["seller","buyer"],
       default:"buyer"
     },
     profilePictureUrl: {

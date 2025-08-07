@@ -3,10 +3,6 @@ import { User } from "../models/user.model.js"
 
 const registerUser = async (req, res, next) => {
     try {
-        const { username, email, password, role } = req.body
-        if ([username, email, password, role].some((item) => item.trim() === "")) {
-            res.status(400).json({ error: "All field is required" })
-        }
         const findUser = await User.findOne({ email })
         if (findUser) {
             res.status(403).json({ error: "User is already exist", success: false })
